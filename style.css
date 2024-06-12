@@ -14,11 +14,12 @@ a {
 header {
     display: flex; 
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center; /* Center items along the cross axis */
 }
 /* CLA Logo + CLA */
 .left-top {
+    border: 1px solid red;
     display: flex;
     align-items: center; /* Center items vertically */
     justify-content: center;
@@ -223,9 +224,13 @@ header {
     position: relative;
     height: 50%;
     width: auto;
-   left: 10%; 
+    left: 10%; 
 }
 
+.container {
+    display: grid;
+    justify-content: center;
+}
 
 /* Square tiles 2x2 */
 .square-container {
@@ -240,13 +245,14 @@ header {
 .square {
     background-color: #f0f0f0; 
     border: 1px solid #ccc; 
-    background-color: rgba(240, 240, 240, 0.559); /* RGB and Blur */
-    box-shadow: 2px 2px 4px rgba(5, 50, 200, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
+    background-color: rgba(240, 240, 240, 0.559); 
+    box-shadow: 2px 2px 4px rgba(5, 50, 200, 0.1);
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center;
+    justify-content: center;
     height: 90px; 
     border-radius: 10px;
+    width: 500px;
 }
 
 /* Media query to ensure responsiveness */
@@ -254,6 +260,9 @@ header {
     .square-container {
         grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Reduce the minimum width */
         grid-gap: 10px; /* Reduce gap for smaller screens */
+    }
+    .square {
+        width: 100%;
     }
 }
 
